@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Study Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background 0.5s ease;
+        }
+
+        body:hover {
+            background: linear-gradient(135deg, #e0e0e0, #f4f4f4);
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(90deg, #007BFF, #00CFFF);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #00CFFF, #007BFF);
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0, 123, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Study Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Pomodoro Technique",
+                "description": "This popular time management method involves studying for 25 minutes and then taking a 5-minute break. It helps improve focus and retention."
+            },
+            {
+                "fact": "Active Recall",
+                "description": "Studies show that actively recalling information (like quizzing yourself) is more effective for memory retention than passive review methods."
+            },
+            {
+                "fact": "The Spacing Effect",
+                "description": "Spacing out study sessions over time (rather than cramming) leads to better long-term retention of information."
+            },
+            {
+                "fact": "Multisensory Learning",
+                "description": "Engaging multiple senses (sight, sound, touch) while studying can enhance memory and understanding. For example, reading aloud or using diagrams."
+            },
+            {
+                "fact": "Study Environment",
+                "description": "Your study environment can significantly impact your concentration. A clean, organized, and quiet space can help improve focus."
+            },
+            {
+                "fact": "Sleep and Memory",
+                "description": "Sleep plays a crucial role in memory consolidation. Studying before bed can help reinforce what you've learned."
+            },
+            {
+                "fact": "Mind Mapping",
+                "description": "Creating mind maps can help visualize relationships between concepts, making it easier to understand and remember complex information."
+            },
+            {
+                "fact": "Music and Studying",
+                "description": "Some studies suggest that listening to certain types of music (like classical or ambient) can enhance concentration and productivity while studying."
+            },
+            {
+                "fact": "Teaching Others",
+                "description": "Explaining what you've learned to someone else can reinforce your understanding and highlight areas that need more review."
+            },
+            {
+                "fact": "Hydration and Brain Function",
+                "description": "Staying hydrated is essential for optimal brain function. Drinking water while studying can help maintain focus and cognitive performance."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            document.getElementById('fact').innerText = `${randomFact.fact}: ${randomFact.description}`;
+        });
+    </script>
+</body>
+</html>
